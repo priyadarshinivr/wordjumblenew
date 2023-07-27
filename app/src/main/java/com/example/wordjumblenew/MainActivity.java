@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.wordjumblenew.R;
 
 public class MainActivity extends AppCompatActivity {
     private Button button;
@@ -15,15 +15,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         button = findViewById(R.id.button);
+        EditText edtWord=findViewById(R.id.edt_word);
+        EditText edtClue=findViewById(R.id.edt_clue);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openPage2();
+                String word=edtWord.getText().toString();
+                String clue=edtClue.getText().toString();
+                openPage2(word,clue);
+
             }
         });
+
     }
-    public void openPage2(){
+    public void openPage2(String word, String clue){
         Intent intent = new Intent(this, Page2.class );
+        intent.putExtra("word",word);
+        intent.putExtra("clue",clue);
         startActivity(intent);
     }
 

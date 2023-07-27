@@ -99,7 +99,8 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputEditText
+    <EditText
+        android:id="@+id/edt_word"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="@drawable/wordtext2"
@@ -114,7 +115,8 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputEditText
+    <EditText
+        android:id="@+id/edt_clue"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="@drawable/wordtext2"
